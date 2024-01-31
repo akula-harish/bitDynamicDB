@@ -9,15 +9,16 @@ export default function TaskComp() {
     const[pointsData, setPointsData] = useState("");
     const[statusData, setStatusData] = useState("");
     const[priorityData, setPriorityData] = useState("");
+    const[formData, setFormData] = useState([]);
+    console.log(formData)
 
-    const userDataObj = [
+    const userDataObj = 
         {
             titleData: titleData,
             pointsData: pointsData,
             statusData: statusData,
             priorityData: priorityData,
         }
-    ]
 
     const inputTitleData = (e:any) => {
         setTitleData(e.target.value)
@@ -32,7 +33,7 @@ export default function TaskComp() {
         setPriorityData(e.target.value)
     }
     const formSubmit = () => {
-        
+        setFormData((previousForm):any => [...previousForm, userDataObj])
     }
   return (
     <div className='task_main'>
@@ -89,7 +90,7 @@ export default function TaskComp() {
                     </div>
                     <div className='buttons_main'>
                         <button>Cancel</button>
-                        <button onSubmit={formSubmit}>Save</button>
+                        <button onClick={formSubmit}>Save</button>
                     </div>
                 </form>
             </div>
