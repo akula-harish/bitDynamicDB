@@ -1,0 +1,140 @@
+.task_main{
+    border: 1px solid #ccc;
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: #fff;
+    z-index: 999;
+}
+.task_header_list, .task_header_child_list{
+    position: relative;
+    font-size: 0px;
+    width: 100%;
+}
+.task_header_list{
+    background-color: #00b48f;
+    padding: 10px;
+    border-top: 1px solid #00b48f;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.task_header_list>li{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    width: 50%;
+    color: #fff;
+}
+.task_header_list>li:last-child{
+    text-align: end;
+}
+.task_header_child_list>li{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 14px;
+}
+.task_body_main{
+    position: relative;
+    font-size: 0px;
+    width: 100%;
+}
+.task_body_sub_main{
+    width: 90%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+}
+.expand_child_icon{
+    color: #fff;
+    border: 1px solid #00b48f;
+    background-color: #00b48f;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+}
+.form{
+    padding: 25px 0px 15px 0px;
+}
+.form_list_one, .form_list_two{
+    font-size: 0px;
+    position: relative;
+    width: 100%;
+}
+.form_list_one>li:first-child{
+    width: 80%; 
+}
+.form_list_one>li:last-child{
+    width: 20%;
+}
+.form_list_one>li>input, .form_list_two>li>select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    border-radius: 6px;
+    padding: 0px 10px;
+}
+.form_list_three>textarea{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-bottom: 40px;
+}
+.form_list_two{
+    padding: 15px 0px;
+}
+.form_list_one>li, .form_list_two>li{
+    display: inline-block;
+    vertical-align: middle;
+}
+.form_list_one>li>label{
+    font-size: 14px;
+    display: block;
+}
+.form_list_two>li>label{
+    display: block;
+    font-size: 14px;
+}
+.form_list_two>li>select{
+    width: 100px;
+}
+.form_list_three>label{
+    display: block;
+    font-size: 14px;
+}
+.form_list_one>li:first-child, .form_list_two>li:first-child{
+    padding-right: 20px;
+}
+.form_list_three{
+    border-bottom: 1px solid #ccc;
+}
+.form_list_three>input{
+    margin-bottom: 60px;
+    padding: 0px 10px;
+}
+.buttons_main{
+    margin-top: 10px;
+    text-align: end;
+}
+.buttons_main>button:last-child{
+    margin-left: 10px;
+    background-color: #00b490;
+    border: 1px solid #00b490;
+    border-radius: 4px;
+}
+.buttons_main>button{
+    padding: 6px 10px;
+    color: #fff;
+}
+.buttons_main>button:first-child{
+    background-color: #008bd0;
+    border: 1px solid #008bd0;
+    border-radius: 4px;
+}

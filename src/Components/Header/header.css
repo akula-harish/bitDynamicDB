@@ -1,0 +1,57 @@
+.header_main_list{
+    /* margin: 10px; */
+}
+.bitkemy_logo{
+    width: 100px;
+}
+.header_first_list, .header_main_list, .header_second_list{
+    font-size: 0px;
+    position: relative;
+    width: 100%;
+}
+.header_main_list>li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+.header_main_list>li:last-child{
+    text-align: end;
+}
+.header_first_list>li{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 600;
+}
+.header_first_list>li:last-child{
+    padding-left: 20px;
+}
+.edit_name{
+    border: 1px solid #efefef;
+    padding: 5px;
+    background-color: #efefef;
+    border-radius: 2px;
+}
+.header_second_list>li{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.header_second_list>li:nth-child(3){
+    background-color: #33e733;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 10px;
+}
+.bi_profile>p{
+    color: #fff;
+    font-size: 16px;
+}
+.header_main_list{
+    border: 1px solid #ccc;
+    box-shadow: 1px 0px 4px 0px #ccc;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

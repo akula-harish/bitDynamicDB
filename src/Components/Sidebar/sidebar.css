@@ -1,0 +1,60 @@
+.sidebar_main{
+    height: 100vh;
+    width: 50px;
+    padding: 10px;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    box-shadow: 1px 0px 4px 0px #ccc;
+}
+.avatar_image{
+    width: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.sidebar_col {
+    width: 200px;
+    height: 100vh; 
+    padding: 10px;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    box-shadow: 1px 0px 4px 0px #ccc;
+    position: relative;
+    font-family:'Times New Roman', Times, serif;
+}
+.nav_bar_list, .nav_child_list{
+    font-size: 0px;
+    position: relative;
+    width: 100%;
+}
+.nav_bar_list>li{
+    cursor: pointer;
+    padding: 15px 0px;
+}
+.nav_child_list>li{
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nav_child_list>li:nth-child(1){
+    width: 25%;
+}
+.nav_child_list>li:nth-child(2){
+    width: 55%;
+}
+.nav_child_list>li:nth-child(3){
+    width: 20%;
+}
+.icon_first{
+    color: #747474;
+}
+.title_nav{
+    font-size: 14px;
+    color: #747474;
+}
+.icon_arrow{
+    color: #747474;
+}
