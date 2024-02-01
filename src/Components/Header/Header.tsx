@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/Logo.png'
 import "../../Components/Header/header.css"
 import EditIcon from '@mui/icons-material/Edit';
@@ -6,6 +6,10 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 
 export default function Header() {
+    const[inputEdit, setInputEdit] = useState("Silverile AI - Test");
+    const inputHandleEdit = (e:any) => {
+        setInputEdit(e.target.value)
+    }
   return (
     <>
         <ul className='header_main_list'>
@@ -18,7 +22,8 @@ export default function Header() {
                     </li>
                     <li>
                         <div className='edit_name'>
-                            <p>Silverlie Ai - Test | <EditIcon style={{fontSize: '14px'}}/></p>
+                            <input type='text' onChange={inputHandleEdit} value={inputEdit}/>
+                            <EditIcon style={{fontSize: '18px'}} className='edit_icon'/>
                         </div>
                     </li>
                 </ul>

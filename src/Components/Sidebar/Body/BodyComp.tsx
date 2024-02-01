@@ -8,19 +8,20 @@ import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
-export default function BodyComp() {
+export default function BodyComp(props: any) {
+  const {tableData} = props;
   return (
     <>
       <div className='body_main'>
           <div>
-            <Header/>
+            <Header />
           </div>
           <div className='body_table_main'>
             <ul className='body_table_title'>
               <li>
                 <ul className='body_table_title_left'>
                   <li>
-                    <input type='checkbox'/>
+                    <input type='radio'/>
                   </li>
                   <li>
                     <h3>Tasks</h3>
@@ -63,16 +64,20 @@ export default function BodyComp() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>01</td>
-                    <td>Hi</td>
-                    <td>Hi</td>
-                    <td>2</td>
-                    <td>Hi</td>
-                    <td>00/00/0000</td>
-                    <td><EditOutlinedIcon/></td>
-                    <td><DeleteOutlineOutlinedIcon/></td>
+                {tableData.map((item: any, index: any) => {
+                  return (
+                  <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{item.titleData}</td>
+                      <td>{item.statusData}</td>
+                      <td>{item.pointsData}</td> 
+                      <td>{item.priorityData}</td>
+                      <td>date</td>
+                      <td><EditOutlinedIcon/></td> 
+                      <td><DeleteOutlineOutlinedIcon/></td>              
                   </tr>
+                  );
+              })}
                 </tbody>
               </table>
             </div>

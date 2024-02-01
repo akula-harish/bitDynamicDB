@@ -27,10 +27,20 @@
     padding-left: 20px;
 }
 .edit_name{
+    position: relative;
+}
+.edit_name>input{
     border: 1px solid #efefef;
     padding: 5px;
     background-color: #efefef;
     border-radius: 2px;
+}
+.edit_icon{
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    border-left: 1.5px solid;
+    padding-left: 2px;
 }
 .header_second_list>li{
     display: inline-block;

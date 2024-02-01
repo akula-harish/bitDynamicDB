@@ -4,37 +4,8 @@ import AspectRatioOutlinedIcon from '@mui/icons-material/AspectRatioOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
 
-export default function TaskComp() {
-    const[titleData, setTitleData] = useState("");
-    const[pointsData, setPointsData] = useState("");
-    const[statusData, setStatusData] = useState("");
-    const[priorityData, setPriorityData] = useState("");
-    const[formData, setFormData] = useState([]);
-    console.log(formData)
-
-    const userDataObj = 
-        {
-            titleData: titleData,
-            pointsData: pointsData,
-            statusData: statusData,
-            priorityData: priorityData,
-        }
-
-    const inputTitleData = (e:any) => {
-        setTitleData(e.target.value)
-    }
-    const inputPointsData = (e:any) => {
-        setPointsData(e.target.value)
-    }
-    const inputStatusData = (e:any) => {
-        setStatusData(e.target.value)
-    }
-    const inputPriorityData = (e:any) => {
-        setPriorityData(e.target.value)
-    }
-    const formSubmit = () => {
-        setFormData((previousForm):any => [...previousForm, userDataObj])
-    }
+export default function TaskComp(props: any) {
+    const {handleChangeForm, submitFormData, formInputValue } = props ;
   return (
     <div className='task_main'>
         <ul className='task_header_list'>
@@ -59,17 +30,17 @@ export default function TaskComp() {
                     <ul className='form_list_one'>
                         <li>
                             <label>TASK Title*</label>
-                            <input type='text' onChange={inputTitleData}/>
+                            <input type='text' name="titleData" value={formInputValue.titleData} onChange={handleChangeForm}/>
                         </li>
                         <li>
                             <label>Points*</label>
-                            <input type='number' onChange={inputPointsData}/>
+                            <input type='number' name="pointsData" value={formInputValue.pointsData} onChange={handleChangeForm}/>
                         </li>
                     </ul>
                     <ul className='form_list_two'>
                         <li>
                             <label>Status*</label>
-                            <select onChange={inputStatusData}>
+                            <select name="statusData" value={formInputValue.statusData} onChange={handleChangeForm}>
                                 <option value='none'>-Select-</option>
                                 <option>Completed</option>
                                 <option>Progress</option>
@@ -77,7 +48,7 @@ export default function TaskComp() {
                         </li>
                         <li>
                             <label>Priority*</label>
-                            <select onChange={inputPriorityData}>
+                            <select name="priorityData" value={formInputValue.priorityData} onChange={handleChangeForm}>
                                 <option value='none'>-Select-</option>
                                 <option>Yes</option>
                                 <option>No</option>
@@ -90,7 +61,7 @@ export default function TaskComp() {
                     </div>
                     <div className='buttons_main'>
                         <button>Cancel</button>
-                        <button onClick={formSubmit}>Save</button>
+                        <button onClick={submitFormData}>Save</button>
                     </div>
                 </form>
             </div>

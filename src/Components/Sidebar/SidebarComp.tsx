@@ -13,7 +13,8 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
 import TaskComp from '../Task/TaskComp';
 
-export default function SidebarComp() {
+export default function SidebarComp(props: any) {
+    const {handleChangeForm, submitFormData, formInputValue } = props;
     const[navi, setNavi] = useState(false);
     const handleToggle = () => {
         setNavi(!navi)
@@ -93,7 +94,7 @@ export default function SidebarComp() {
                 }
             </ul>
         </div> 
-        {toggleTask ? <TaskComp/> : <></>}
+        {toggleTask ? <TaskComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue={formInputValue}/> : <></>}
     </>
   )
 }
