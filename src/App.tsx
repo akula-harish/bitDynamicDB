@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [formInputValue, setFormInputValue] = useState({
+    id: '',
     titleData: "",
     pointsData: "",
     statusData: "",
@@ -20,15 +21,20 @@ export default function App() {
     e.preventDefault();
     console.log(formInputValue);
     setTableData((previousData): any => [...previousData, formInputValue]);
-    setFormInputValue({titleData: "",  pointsData: "", statusData: "", priorityData: ""});
+    setFormInputValue({titleData: "",  pointsData: "", statusData: "", priorityData: "", id: ""});
   };
+
+  const handleDelete = (id:any) => {
+    let newArray = tableData.filter((item:any) => item.id !== id)
+    setTableData(newArray)
+  }
 
             // ------------Parent Component------------
 
   return (
     <div style={{display: 'flex', verticalAlign: 'top'}}>
       <SidebarComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue = {formInputValue}/>
-      <BodyComp tableData = {tableData}/>
+      <BodyComp tableData = {tableData} handleDelete = {handleDelete}/>
     </div>
   )
 }

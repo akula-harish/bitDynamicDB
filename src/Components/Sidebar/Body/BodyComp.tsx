@@ -9,7 +9,9 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 export default function BodyComp(props: any) {
-  const {tableData} = props;
+  const {tableData, handleDelete} = props;
+  //taking date and converting to json and grabing the 10 values and did reverse and join with / this
+  const newDate = new Date().toJSON().slice(0, 10).split('-').reverse().join('/')
   return (
     <>
       <div className='body_main'>
@@ -65,16 +67,17 @@ export default function BodyComp(props: any) {
                 </thead>
                 <tbody>
                 {tableData.map((item: any, index: any) => {
+                  item.id = index+ 1
                   return (
                   <tr key={index}>
-                      <td>{index + 1}</td>
+                      <td>BIT-{item.id}</td>
                       <td>{item.titleData}</td>
                       <td>{item.statusData}</td>
                       <td>{item.pointsData}</td> 
                       <td>{item.priorityData}</td>
-                      <td>date</td>
+                      <td>{newDate}</td>
                       <td><EditOutlinedIcon/></td> 
-                      <td><DeleteOutlineOutlinedIcon/></td>              
+                      <td onClick={() => handleDelete(item.id)}><DeleteOutlineOutlinedIcon/></td>              
                   </tr>
                   );
               })}
