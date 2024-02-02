@@ -14,7 +14,7 @@ import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
 import TaskComp from '../Task/TaskComp';
 
 export default function SidebarComp(props: any) {
-    const {handleChangeForm, submitFormData, formInputValue } = props;
+    const {handleChangeForm, submitFormData, formInputValue, errorForm, handleError, handleErrorTitle, handleErrorStatus} = props;
     const[navi, setNavi] = useState(false);
     const handleToggle = () => {
         setNavi(!navi)
@@ -94,7 +94,7 @@ export default function SidebarComp(props: any) {
                 }
             </ul>
         </div> 
-        {toggleTask ? <TaskComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue={formInputValue} setToggleTask = {setToggleTask}/> : <></>}
+        {toggleTask ? <TaskComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue={formInputValue} setToggleTask = {setToggleTask} errorForm = {errorForm} handleError = {handleError} handleErrorTitle = {handleErrorTitle} handleErrorStatus = {handleErrorStatus}/> : <></>}
     </>
   )
 }

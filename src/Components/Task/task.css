@@ -138,3 +138,7 @@
     border: 1px solid #008bd0;
     border-radius: 4px;
 }
+.poitns_error{
+    font-size: 12px;
+    color: red;
+}

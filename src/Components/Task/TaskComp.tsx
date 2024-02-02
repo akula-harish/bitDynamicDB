@@ -3,9 +3,10 @@ import AspectRatioOutlinedIcon from '@mui/icons-material/AspectRatioOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
 import EmojiFlagsOutlinedIcon from '@mui/icons-material/EmojiFlagsOutlined';
+import { useState } from "react";
 
 export default function TaskComp(props: any) {
-    const {handleChangeForm, submitFormData, formInputValue} = props ;
+    const {handleChangeForm, submitFormData, formInputValue, handleError, handleErrorTitle, handleErrorStatus} = props;
   return (
     <div className='task_main'>
         <ul className='task_header_list'>
@@ -31,10 +32,12 @@ export default function TaskComp(props: any) {
                         <li>
                             <label>TASK Title*</label>
                             <input type='text' name="titleData" value={formInputValue.titleData} onChange={handleChangeForm}/>
+                            <p className="poitns_error">{handleErrorTitle}</p>
                         </li>
                         <li>
                             <label>Points*</label>
                             <input type='number' name="pointsData" value={formInputValue.pointsData} onChange={handleChangeForm}/>
+                            <p className="poitns_error">{handleError}</p>   
                         </li>
                     </ul>
                     <ul className='form_list_two'>
@@ -46,21 +49,24 @@ export default function TaskComp(props: any) {
                                 <option>Development</option>
                                 <option>Grooming</option>
                             </select>
+                            <p className="poitns_error">{handleErrorTitle}</p>
                         </li>
                         <li>
                             <label>Priority*</label>
                             <select name="priorityData" value={formInputValue.priorityData} onChange={handleChangeForm}>
                                 <option value='none'>-Select-</option>
                                 <option>
-                                    <EmojiFlagsOutlinedIcon/>
+                                    yes
                                 </option>
                                 <option>No</option>
                             </select>
+                            <p className="poitns_error">{handleErrorTitle}</p>
                         </li>
                     </ul>
                     <div className='form_list_three'>
                         <label>Description*</label>
                         <textarea/>
+                        <p className="poitns_error" style={{marginTop: '-20px'}}>{handleErrorTitle}</p>
                     </div>
                     <div className='buttons_main'>
                         <button>Cancel</button>
