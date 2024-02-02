@@ -25,6 +25,13 @@
     position: relative;
     font-family:'Times New Roman', Times, serif;
 }
+.sidebar_col>span{
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: end;
+    padding-right: 10px;
+}
 .nav_bar_list, .nav_child_list{
     font-size: 0px;
     position: relative;

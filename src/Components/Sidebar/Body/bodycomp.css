@@ -3,6 +3,7 @@
  width: 100%;
  font-size: 0px;
  padding: 10px;
+ font-family:'Times New Roman', Times, serif;
 }
 .body_table_main{
     border: 1px solid #ccc;
@@ -22,7 +23,7 @@
 }
 .body_table_title_left>li{
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
     font-size: 14px;
 }
 .body_table_title>li{
@@ -31,7 +32,7 @@
     vertical-align: middle;
 }
 .body_table_title_left>li{
-    padding-right: 10px;
+    padding-right: 2px;
 }
 .body_table_title_right{
     text-align: end;
@@ -84,4 +85,13 @@ table, th, td {
     font-size: 12px;
     text-align: center;
     height: 20px;
+}
+.body_table_title>li>select{
+    height: 30px;
+    width: 120px;
+    text-align: center;
+}
+.empty_table{
+    font-size: 14px;
+    text-align: center;
 }

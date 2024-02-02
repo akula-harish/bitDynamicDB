@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
 import "./task.css"
 import AspectRatioOutlinedIcon from '@mui/icons-material/AspectRatioOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
+import EmojiFlagsOutlinedIcon from '@mui/icons-material/EmojiFlagsOutlined';
 
 export default function TaskComp(props: any) {
-    const {handleChangeForm, submitFormData, formInputValue } = props ;
+    const {handleChangeForm, submitFormData, formInputValue} = props ;
   return (
     <div className='task_main'>
         <ul className='task_header_list'>
@@ -42,15 +42,18 @@ export default function TaskComp(props: any) {
                             <label>Status*</label>
                             <select name="statusData" value={formInputValue.statusData} onChange={handleChangeForm}>
                                 <option value='none'>-Select-</option>
-                                <option>Completed</option>
-                                <option>Progress</option>
+                                <option>Backlog</option>
+                                <option>Development</option>
+                                <option>Grooming</option>
                             </select>
                         </li>
                         <li>
                             <label>Priority*</label>
                             <select name="priorityData" value={formInputValue.priorityData} onChange={handleChangeForm}>
                                 <option value='none'>-Select-</option>
-                                <option>Yes</option>
+                                <option>
+                                    <EmojiFlagsOutlinedIcon/>
+                                </option>
                                 <option>No</option>
                             </select>
                         </li>

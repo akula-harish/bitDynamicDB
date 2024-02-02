@@ -4,8 +4,9 @@ import "./App.css"
 import { useState } from 'react';
 
 export default function App() {
+  
   const [formInputValue, setFormInputValue] = useState({
-    id: '',
+    id: "",
     titleData: "",
     pointsData: "",
     statusData: "",
@@ -29,12 +30,20 @@ export default function App() {
     setTableData(newArray)
   }
 
+  // ------filter_data-------
+  const handleFilterData = (status: any) => {
+    if(status !== "none"){
+      let filterArray = tableData.filter((item:any) => item.statusData === status)
+      setTableData(filterArray)
+    }
+  }
+
             // ------------Parent Component------------
 
   return (
     <div style={{display: 'flex', verticalAlign: 'top'}}>
       <SidebarComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue = {formInputValue}/>
-      <BodyComp tableData = {tableData} handleDelete = {handleDelete}/>
+      <BodyComp tableData = {tableData} handleDelete = {handleDelete} handleFilterData = {handleFilterData}/>
     </div>
   )
 }

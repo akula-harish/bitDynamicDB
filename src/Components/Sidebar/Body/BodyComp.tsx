@@ -1,4 +1,3 @@
-import React from 'react'
 import "../Body/bodycomp.css"
 import Header from '../../Header/Header'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
@@ -9,14 +8,14 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 export default function BodyComp(props: any) {
-  const {tableData, handleDelete} = props;
-  //taking date and converting to json and grabing the 10 values and did reverse and join with / this
+  const {tableData, handleDelete, handleFilterData} = props;
+  //taking date and converting to json and grabing the 10 values and i did reverse and joined with / this
   const newDate = new Date().toJSON().slice(0, 10).split('-').reverse().join('/')
   return (
     <>
       <div className='body_main'>
           <div>
-            <Header />
+            <Header/>
           </div>
           <div className='body_table_main'>
             <ul className='body_table_title'>
@@ -31,7 +30,12 @@ export default function BodyComp(props: any) {
                 </ul>
               </li>
               <li>
-                <input type='search' placeholder='Search here.....' style={{height: '30px', width: '70%', padding: '0px 10px'}}/>
+                <select onClick={(e:any) => handleFilterData(e.target.value)}>
+                    <option value = 'none'>---Status Filter---</option>
+                    <option value = 'Backlog'>Backlog</option>
+                    <option value = 'Development'>Development</option>
+                    <option value = 'Grooming'>Grooming</option>
+                </select>
               </li>
               <li>
                 <ul className='body_table_title_right'>
@@ -66,20 +70,31 @@ export default function BodyComp(props: any) {
                   </tr>
                 </thead>
                 <tbody>
-                {tableData.map((item: any, index: any) => {
-                  item.id = index+ 1
-                  return (
-                  <tr key={index}>
-                      <td>BIT-{item.id}</td>
-                      <td>{item.titleData}</td>
-                      <td>{item.statusData}</td>
-                      <td>{item.pointsData}</td> 
-                      <td>{item.priorityData}</td>
-                      <td>{newDate}</td>
-                      <td><EditOutlinedIcon/></td> 
-                      <td onClick={() => handleDelete(item.id)}><DeleteOutlineOutlinedIcon/></td>              
-                  </tr>
-                  );
+                {tableData.length === 0 ? 
+                  <tr>
+                    <td className='empty_table'>--</td>
+                    <td className='empty_table'>--</td> 
+                    <td className='empty_table'>--</td> 
+                    <td className='empty_table'>--</td>
+                    <td className='empty_table'>--</td> 
+                    <td className='empty_table'>--</td>
+                    <td className='empty_table'>--</td> 
+                    <td className='empty_table'>--</td>
+                  </tr> 
+                  :tableData.map((item: any, index: any) => {
+                    item.id = index+ 1
+                    return (
+                    <tr key={index}>
+                        <td>BIT-{item.id}</td>
+                        <td>{item.titleData}</td>
+                        <td>{item.statusData}</td>
+                        <td>{item.pointsData}</td> 
+                        <td>{item.priorityData}</td>
+                        <td>{newDate}</td>
+                        <td><EditOutlinedIcon/></td> 
+                        <td onClick={() => handleDelete(item.id)}><DeleteOutlineOutlinedIcon/></td>              
+                    </tr>
+                    );
               })}
                 </tbody>
               </table>

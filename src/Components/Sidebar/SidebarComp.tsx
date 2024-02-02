@@ -94,7 +94,7 @@ export default function SidebarComp(props: any) {
                 }
             </ul>
         </div> 
-        {toggleTask ? <TaskComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue={formInputValue}/> : <></>}
+        {toggleTask ? <TaskComp handleChangeForm = {handleChangeForm} submitFormData = {submitFormData} formInputValue={formInputValue} setToggleTask = {setToggleTask}/> : <></>}
     </>
   )
 }
